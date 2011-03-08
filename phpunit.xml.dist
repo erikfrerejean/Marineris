@@ -1,0 +1,27 @@
+<phpunit bootstrap="test/common/bootstrap.php" colors="true">
+	<testsuites>
+		<testsuite name="Marineris">
+			<directory>./test/</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist>
+			<directory suffix=".php">./</directory>
+			<exclude>
+				<directory suffix=".php">logs</directory>
+				<directory suffix=".php">test</directory>
+			</exclude>
+		</whitelist>
+	</filter>
+	<logging>
+		<log type="coverage-html"
+			title="Marineris"
+			target="logs/coverage"
+			charset="UTF-8"
+			yui="true"
+			highlight="false"
+			lowUpperBound="35"
+			highLowerBound="70" />
+		<log type="coverage-clover" target="logs/clover.xml" />
+	</logging>
+</phpunit>
